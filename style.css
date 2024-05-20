@@ -314,8 +314,8 @@ button {
 }
 
 .square1 {
-  height: 10%;
-  width: 100%;
+  height: 20px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -389,7 +389,7 @@ button {
 
 /* footer -----------------------------------------------------*/
 .pie-pagina {
-  margin-top: 50px;
+  margin-top: 350px;
   width: 100%;
   background-color: #1d212d;
 }
@@ -402,22 +402,22 @@ button {
   grid-gap: 50px;
   padding: 45px 0px;
 }
-.pie-pagina .grupo-1 .box figure {
+.pie-pagina .grupo-1 .box0 figure {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.pie-pagina .grupo-1 .box figure img {
+.pie-pagina .grupo-1 .box0 figure img {
   width: 250px;
 }
-.pie-pagina .grupo-1 .box h2 {
+.pie-pagina .grupo-1 .box0 h2 {
   color: #fff;
   margin-bottom: 25px;
   font-size: 20px;
 }
-.pie-pagina .grupo-1 .box p {
+.pie-pagina .grupo-1 .box0 p {
   color: #efefef;
   margin-bottom: 10px;
 }
