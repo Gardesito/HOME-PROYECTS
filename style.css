@@ -3,6 +3,10 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
+:root {
+  --fuente: "Poppins", sans-serif;
+}
 body::before {
   content: "";
   width: 100%;
@@ -23,11 +27,18 @@ body {
   position: relative;
 }
 
-:root {
-  --fuente: "Poppins", sans-serif;
-}
-
 /* header */
+.barraNav {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+  font-weight: 00;
+  padding: 20px;
+  max-width: 100%;
+  width: 100vh;
+  margin: 0 auto;
+}
 .barra-header {
   margin: 0 auto;
   position: sticky;
@@ -37,7 +48,7 @@ body {
   max-width: 100%;
 }
 
-.menu {
+.menuNav {
   display: flex;
   gap: 40px;
   align-items: center;
@@ -67,32 +78,108 @@ nav .links {
   left: 0;
 }
 
-.barra {
-  font-size: 20px;
-  display: flex;
-  justify-content: space-between;
-  font-family: sans-serif;
-  font-weight: 00;
-  padding: 20px;
-  max-width: 100%;
-  width: 100vh;
-  margin: 0 auto;
-}
-
-/* header */
-.container1 {
+/*------------------------------------- Cards Loop------------------------------ */
+/* .containerLoop {
   margin: auto;
   position: relative;
   display: grid;
   place-items: center;
   overflow: hidden;
   width: 100%;
+} */
+.textHero {
+  color: white;
+  text-align: center;
+
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-family: sans-serif;
+  font-size: 59px;
+}
+
+button {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+button:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+.btn-contact {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .list {
   display: flex;
-  /*   width: calc(250px * 18);
- */
+
   width: fit-content;
   animation: loop 45s linear infinite;
   width: fit-content;
@@ -128,21 +215,6 @@ nav .links {
 
 /* ---- SQUARE-------- */
 
-.text-nav {
-  color: white;
-  text-align: center;
-  /*   align-items: center;
- */
-  /*   justify-content: center;
- */
-  /*   margin: 0 auto;
- */
-  margin-bottom: 50px;
-  margin-top: 50px;
-  font-family: sans-serif;
-    font-size: 70px;
- 
-}
 /* ---- iconos flotatntes */
 .prueba1 {
   position: relative;
@@ -203,23 +275,15 @@ nav .links {
   background: linear-gradient(to right, #7b14cf 0%, #cf5ebe 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-button {
-  cursor: pointer;
-}
-
-.btn-contact {
-  display: flex;
-  margin: 0 auto;
-  padding: 0.9em 1.8em;
-
-  /*   padding: 20px 60px 10px; 
+  background-size: 200%;
+  /*   animation: shine 6s linear infinite;
  */
-  background-color: #0064d7;
-  color: white;
-  border: 0;
-  border-radius: 50px;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }
 
 /* ----------------------------------------------------------------------------
@@ -322,15 +386,8 @@ button {
 .boxes {
   margin-top: 150px;
   margin-bottom: 150px;
-  width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-flow: wrap;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  justify-content: center;
 }
 
 /* footer -----------------------------------------------------*/
@@ -339,6 +396,9 @@ button {
   width: 100%;
   background-color: #1d212d;
   position: relative;
+  -webkit-box-shadow: 0px 0px 60px 24px rgba(153, 0, 255, 0.16);
+  -moz-box-shadow: 0px 0px 60px 24px rgba(153, 0, 255, 0.16);
+  box-shadow: 0px 0px 60px 24px rgba(153, 0, 255, 0.16);
 }
 .pie-pagina .grupo-1 {
   width: 100%;
@@ -348,6 +408,7 @@ button {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px;
   padding: 45px 0px;
+  font-family: sans-serif;
 }
 .pie-pagina .grupo-1 .box0 figure {
   width: 100%;
@@ -382,11 +443,13 @@ button {
   border-radius: 10px;
 }
 .pie-pagina .grupo-1 .red-social a:hover {
-  color: aqua;
+  color: rgb(199, 51, 218);
 }
 .pie-pagina .grupo-2 {
   background-color: #0a1a2a;
   padding: 15px 10px;
+  font-family: sans-serif;
+
   text-align: center;
   color: #fff;
 }
@@ -425,7 +488,7 @@ button {
     #2b86c5 100%
   );
   animation: animate 25s linear infinite;
-  bottom: -150px;
+  bottom: -20px;
 }
 
 .circles li:nth-child(1) {
@@ -511,7 +574,7 @@ button {
   }
 
   100% {
-    transform: translateY(-1000px) rotate(720deg);
+    transform: translateY(-1600px) rotate(720deg);
     opacity: 0;
     border-radius: 50%;
   }
